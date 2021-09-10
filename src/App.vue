@@ -1,11 +1,7 @@
 <template>
   <div id="app">
     <img alt="Vue logo" src="./assets/logo.png">
-    <header>
-      <h1>CECI EST MON HEADER</h1>
-    </header>
-    <HelloWorld msg="Welcome to Your Vue.js App" />
-    <footer><h1>CECI EST MON FOOTER</h1></footer>
+    <HelloWorld msg="Learning Vue.js !" />
   </div>
 </template>
 
