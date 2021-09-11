@@ -4,7 +4,7 @@
     <h2>{{ firstName }} {{ name }}</h2>
     <img :class="gender"  :src="picture" :alt="firstName" />
     <h3>Email : {{ email }}</h3>
-    <button :class="gender" @click="getNewUser()">Generate another one !</button>
+    <button :class="gender" @click="getNewUser">Generate another one !</button>
   </div>
 </template>
 
