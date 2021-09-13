@@ -2,22 +2,20 @@
   <div id="app">
     <img alt="Vue logo" width="100" src="./assets/logo.png" />
     <HelloWorld msg="Learning Vue.js !" />
-    <div class="flex"><UserGenerator />
-    <TasksTracker title="Task Tracker" /></div>
+    <Header />
+    <router-view></router-view>
   </div>
 </template>
 
 <script>
 import HelloWorld from "./components/HelloWorld.vue";
-import UserGenerator from "./components/UserGenerator.vue";
-import TasksTracker from "./components/TasksTracker.vue";
+import Header from "./components/Header.vue"
 
 export default {
   name: "App",
   components: {
     HelloWorld,
-    UserGenerator,
-    TasksTracker,
+    Header
   },
 };
 </script>

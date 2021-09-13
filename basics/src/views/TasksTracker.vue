@@ -2,9 +2,10 @@
   <div class="container">
     <header>
       <h1>{{ title }}</h1>
-      <Button color="green" text="Add Task" />
+      <Button @btn-click="toggleAddTask" :color="shownAdd ? 'red': 'green'" :text="shownAdd ? 'Close': 'Add Task'" />
     </header>
-    <add-task @add-task="addTask" />
+    <div v-if="shownAdd"><add-task @add-task="addTask"/></div>
+
     <Tasks
       :tasks="tasks"
       @delete-task="deleteTask"
@@ -14,9 +15,9 @@
 </template>
 
 <script>
-import AddTask from "./AddTask.vue";
-import Button from "./Button.vue";
-import Tasks from "./Tasks.vue";
+import AddTask from "../components/AddTask.vue";
+import Button from "../components/Button.vue";
+import Tasks from "../components/Tasks.vue";
 
 export default {
   name: "TasksTracker",
@@ -26,6 +27,7 @@ export default {
   data() {
     return {
       tasks: [],
+      shownAdd: false,
     };
   },
   created() {
@@ -51,8 +53,11 @@ export default {
     ];
   },
   methods: {
+    toggleAddTask() {
+      this.shownAdd = !this.shownAdd
+    },
     addTask(task) {
-      this.tasks = [...this.tasks, {...task, id: this.tasks.length +1 }];
+      this.tasks = [...this.tasks, { ...task, id: this.tasks.length + 1 }];
     },
     deleteTask(id) {
       if (confirm("Are you sure?")) {
@@ -60,7 +65,7 @@ export default {
       }
     },
     toggleReminder(id) {
-      console.log({ id : id-1, task: this.tasks })
+      console.log({ id: id - 1, task: this.tasks });
       this.tasks[id - 1].reminder = !this.tasks[id - 1].reminder;
     },
   },
