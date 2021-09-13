@@ -1,7 +1,7 @@
 <template>
   <div class="container">
     <header>
-      <h1>{{ title }}</h1>
+      <h1>Tasks Tracker</h1>
       <Button @btn-click="toggleAddTask" :color="shownAdd ? 'red': 'green'" :text="shownAdd ? 'Close': 'Add Task'" />
     </header>
     <div v-if="shownAdd"><add-task @add-task="addTask"/></div>
@@ -21,9 +21,6 @@ import Tasks from "../components/Tasks.vue";
 
 export default {
   name: "TasksTracker",
-  props: {
-    title: String,
-  },
   data() {
     return {
       tasks: [],

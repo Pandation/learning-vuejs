@@ -1,6 +1,6 @@
 import {createRouter, createWebHistory} from "vue-router";
-import UserGenerator from "../views/UserGenerator.vue";
-import TasksTracker from "../views/TasksTracker.vue";
+import UserGenerator from "@/views/UserGenerator.vue";
+import TasksTracker from "@/views/TasksTracker.vue";
 
 const routes = [
   {
