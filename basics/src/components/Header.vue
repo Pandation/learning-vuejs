@@ -1,7 +1,7 @@
 <template>
   <nav>
-      <a href="/user-generator">UserGenerator</a>
-      <a href="/tasks-tracker">TasksTracker</a>
+      <router-link to="/user-generator">UserGenerator</router-link>
+      <router-link to="/tasks-tracker">TasksTracker</router-link>
   </nav>
 </template>
 
@@ -24,6 +24,10 @@ export default {
       margin: 20px;
       color: rgb(31, 156, 104);
       text-shadow: 0 -1px rgb(19, 41, 78);
+    }
+
+    .active {
+      text-decoration: underline;
     }
 
 </style>
